@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:inline="none">
+<!-- xmlns:th="http://www.thymeleaf.org" :导入thymeleaf的名称空间-->
+<!-- th:inline="none":后台返回json数据是，页面加载时 ，解析失败-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>成功success</h1>
+<!--th:text=""将div里面的文本内容设置为...-->
+<div  th:text="${hello}"></div>
+
+<hr>
+<div th:text="${hello}"></div>
+<div th:utext="${hello}"></div><!--不转意字符-->
+<hr>
+
+<!--th:each 每次遍历都会生成当前这个标签-->
+<h4 th:text="${user}" th:each="user:${users}"></h4>
+<hr>
+
+<h4>
+
+    <span th:each="user:${users}">[[${user}]]</span>
+    <!--[[]]==th:text  [()]==th:utext-->
+</h4>
+
+</body>
+</html>
